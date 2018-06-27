@@ -108,7 +108,7 @@ class Log {
      * @return void
      */
     static function write($message,$level=self::ERR,$destination='',$type=3,$extra='') {
-        $config_obj=Yaf_Registry::get("config");
+        $config_obj=Yaf\Registry::get("config");
         $log_config=$config_obj->log->toArray();
         $now = date(self::$format);
         $type = $type?$type:3;

@@ -1,0 +1,28 @@
+Unknown error type: [2]--- Yaf\Loader::autoload(): Failed opening script /data/www/test/zys/application/library/yaf/Registry.php: No such file or directory ---/data/www/test/zys/application/library/distributed/dredis.php ---- 16  <br />
+
+Fatal error: Uncaught Error: Class 'yaf_Registry' not found in /data/www/test/zys/application/library/distributed/dredis.php on line 16
+
+Call Stack:
+    0.0003     363808   1. {main}() /data/www/test/zys/server/distributed/DistributedServer.php:0
+    0.0014     419712   2. DistributedServer::getInstance() /data/www/test/zys/server/distributed/DistributedServer.php:13
+    0.0014     419936   3. DistributedServer->__construct() /data/www/test/zys/distributed/server/DistributedServer.php:309
+    0.0063     819272   4. Swoole\Server->start() /data/www/test/zys/distributed/server/DistributedServer.php:94
+
+Error: Class 'yaf_Registry' not found in /data/www/test/zys/application/library/distributed/dredis.php on line 16
+
+Call Stack:
+    0.0003     363808   1. {main}() /data/www/test/zys/server/distributed/DistributedServer.php:0
+    0.0014     419712   2. DistributedServer::getInstance() /data/www/test/zys/server/distributed/DistributedServer.php:13
+    0.0014     419936   3. DistributedServer->__construct() /data/www/test/zys/distributed/server/DistributedServer.php:309
+    0.0063     819272   4. Swoole\Server->start() /data/www/test/zys/distributed/server/DistributedServer.php:94
+    0.1192     819448   5. DistributedServer->onStart() /data/www/test/zys/distributed/server/DistributedServer.php:94
+    0.1196     820544   6. DistributedClient->getserlist() /data/www/test/zys/distributed/server/DistributedServer.php:101
+    0.1206     846568   7. distributed_dredis::getInstance() /data/www/test/zys/distributed/server/DistributedClient.php:122
+    0.1206     846608   8. distributed_dredis->__construct() /data/www/test/zys/application/library/distributed/dredis.php:47
+
+[2018-06-27 13:39:00 #2977.4]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught Error: Class 'yaf_Registry' not found in /data/www/test/zys/application/library/distributed/dredis.php:16
+Stack trace:
+#0 /data/www/test/zys/application/library/distributed/dredis.php(47): distributed_dredis->__construct()
+#1 /data/www/test/zys/distributed/server/DistributedClient.php(122): distributed_dredis::getInstance()
+#2 /data/www/test/zys/distributed/server/DistributedServer.php(101): DistributedClient->getserlist()
+#3 [internal function]: Dist

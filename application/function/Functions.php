@@ -682,7 +682,7 @@ function uicode_z($str,$method='en') {
 //trance
 function trace($value='[yaf]',$label='',$level='DEBUG',$record=false) {
 	static $_trace =  array();
-	$config_obj=Yaf_Registry::get("config");
+	$config_obj=Yaf\Registry::get("config");
 	$log_config=$config_obj->log->toArray();
 	$record=isset($log_config['record'])?$log_config['record']:FALSE;
 	if('[yaf]' === $value){ // 获取trace信息

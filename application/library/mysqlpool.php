@@ -19,7 +19,7 @@ class mysqlpool
     }
  
     public function connect($data,$type='sql') {
-    	$config_obj=Yaf_Registry::get("config");
+    	$config_obj=Yaf\Registry::get("config");
 		$config=$config_obj->syncmysql->toArray();
         if(!$fp = $this->client->connect($config['ServerIp'],$config['port'],-1)) {
             return;

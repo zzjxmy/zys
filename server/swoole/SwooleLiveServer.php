@@ -20,7 +20,7 @@ class SwooleLiveServer
 		define('MYPATH', dirname(APPLICATION_PATH));
 		$this->application = new \Yaf\Application(dirname(APPLICATION_PATH). "/conf/application.ini");
 		$this->application->bootstrap();
-		$config_obj=Yaf_Registry::get("config");
+		$config_obj=Yaf\Registry::get("config");
 		$live_config=$config_obj->live->toArray();
 		$server = new swoole_websocket_server($live_config['ServerIp'], $live_config['port']);
 		//ssl配置，注意编译swoole的时候需要加上--enable-openssl选项

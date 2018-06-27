@@ -34,9 +34,9 @@ class MySQLPollServer
     {
         define('APPLICATION_PATH', dirname(dirname(__DIR__)). "/application");
         define('MYPATH', dirname(APPLICATION_PATH));
-        $this->application = new Yaf_Application(dirname(APPLICATION_PATH). "/conf/application.ini");
+        $this->application = new Yaf\Application(dirname(APPLICATION_PATH). "/conf/application.ini");
         $this->application->bootstrap();
-        $config_obj=Yaf_Registry::get("config");
+        $config_obj=Yaf\Registry::get("config");
         $databaseconfig=$config_obj->database->config->toArray();
         $syncmysql=$config_obj->syncmysql->toArray();
         $redisconfig=$config_obj->redis->config->toArray();

@@ -1,0 +1,16 @@
+Unknown error type: [2]--- Yaf\Loader::autoload(): Failed opening script /data/www/test/zys/application/library/Model.php: No such file or directory ---/data/www/test/zys/application/library/swoole/socket.php ---- 2  <br />
+
+Fatal error: Class 'Model' not found in /data/www/test/zys/application/library/swoole/socket.php on line 2
+
+Call Stack:
+    0.0006     387104   1. {main}() /data/www/test/zys/server/swoole/VmStatServer.php:0
+    0.0007     387512   2. VmStatServer::getInstance() /data/www/test/zys/server/swoole/VmStatServer.php:102
+    0.0007     387624   3. VmStatServer->__construct() /data/www/test/zys/server/swoole/VmStatServer.php:96
+    0.0062     763760   4. Swoole\WebSocket\Server->start() /data/www/test/zys/server/swoole/VmStatServer.php:57
+    0.1223     765000   5. VmStatServer->{closure:/data/www/test/zys/server/swoole/VmStatServer.php:64-74}() /data/www/test/zys/server/swoole/VmStatServer.php:57
+    0.1224     781816   6. Yaf\Application->execute() /data/www/test/zys/server/swoole/VmStatServer.php:67
+    0.1225     781856   7. spl_autoload_call() /data/www/test/zys/server/swoole/VmStatServer.php:67
+    0.1225     781896   8. Yaf\Loader->autoload() /data/www/test/zys/server/swoole/VmStatServer.php:67
+    0.1234     789472   9. Yaf\Loader->autoload() /data/www/test/zys/server/swoole/VmStatServer.php:67
+
+[2018-06-27 13:38:57 #2953.1]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Class 'Model' not found in /data/www/test/zys/application/library/swoole/socket.php on line 2.

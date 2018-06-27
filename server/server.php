@@ -22,7 +22,7 @@ if(!extension_loaded('swoole'))
 if(php_sapi_name() !== 'cli'){
     exit("Please use php cli mode.\n");
 }
-$cmd="/usr/local/php/bin/php";//php的绝对路径
+$cmd="/usr/bin/php";//php的绝对路径
 function syncServer()
 {
     echo (yield ['rpc']) ."\n";

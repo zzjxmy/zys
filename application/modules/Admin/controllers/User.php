@@ -11,7 +11,7 @@
 | 日期：2016/2/25 15:42 星期四
 |---------------------------------------------------------------
 */
-class UserController extends Yaf_Controller_Abstract {
+class UserController extends Yaf\Controller_Abstract {
     private $title;
     private $UserAdd_Url;
     private $UserDel_Url;
@@ -22,7 +22,7 @@ class UserController extends Yaf_Controller_Abstract {
      */
 	public function init() {
 		$this->_req = $this->getRequest();
-        $config = Yaf_Application::app()->getConfig();
+        $config = Yaf\Application::app()->getConfig();
         $this->title        = $config['web']['title'];
         $this->UserAdd_Url  = $config['user']['add'];
         $this->UserDel_Url  = $config['user']['del'];
@@ -280,7 +280,7 @@ class UserController extends Yaf_Controller_Abstract {
      * 名称:  删除用户
      */
 	public function delAction() {
-        Yaf_Dispatcher::getInstance()->autoRender(FALSE);
+        Yaf\Dispatcher::getInstance()->autoRender(FALSE);
         $userinfo = PostData($this->UserDel_Url,array('ids' =>$_GET['id']));
         echo json_encode(array('status' =>1,'msg'=>"ok"));
 	}
@@ -301,7 +301,7 @@ class UserController extends Yaf_Controller_Abstract {
      */
     
 	 public function getuserlistAction() {
-      Yaf_Dispatcher::getInstance()->autoRender(FALSE);
+      Yaf\Dispatcher::getInstance()->autoRender(FALSE);
       if(isset($_POST) && !empty($_POST)){
             //$url = $_POST['url'];
             $_POST['page']=$_POST['curPage'];
@@ -347,7 +347,7 @@ class UserController extends Yaf_Controller_Abstract {
     }
 
      public function getuserlist1Action() {
-      Yaf_Dispatcher::getInstance()->autoRender(FALSE);
+      Yaf\Dispatcher::getInstance()->autoRender(FALSE);
       if(isset($_POST) && !empty($_POST)){
            //$_POST['page']=$_POST['curPage'];
             //$_POST['rows']=$_POST['pageSize'];
@@ -400,7 +400,7 @@ class UserController extends Yaf_Controller_Abstract {
         
     }
     public function ajaxuploadAction() {
-      Yaf_Dispatcher::getInstance()->autoRender(FALSE);
+      Yaf\Dispatcher::getInstance()->autoRender(FALSE);
             
            echo json_encode($_POST);
            //print_r($_FILES);
